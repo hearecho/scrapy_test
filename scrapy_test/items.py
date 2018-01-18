@@ -11,4 +11,17 @@ import scrapy
 class ScrapyTestItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    #小说名字
+    name = scrapy.Field()
+    #作者
+    author = scrapy.Field()
+    #小说地址
+    novelurl = scrapy.Field()
+    #小说的连载状态
+    serialstatus = scrapy.Field()
+    #字数
+    serialnumber = scrapy.Field()
+    #文章类别
+    category = scrapy.Field()
+    #小说编号
+    name_id = scrapy.Field()
