@@ -32,3 +32,27 @@ class Sql:
             return 0
         else:
             return 1
+
+
+    @classmethod
+    def insert_dd_chaptername(cls,xs_chaptername,xs_content,id_name,num_id,url):
+        sql = 'insert into dd_chaptername(xs_chaptername,xs_content,id_name,num_id,url) ' \
+              'VALUES (\'{}\',\'{}\',\'{}\',\'{}\',\'{}\')'.format(xs_chaptername,xs_content,id_name,num_id,url)
+
+        try:
+            cursor.execute(sql)
+            db.commit()
+        except Exception as e:
+            print(e.args)
+            db.rollback()
+
+    @classmethod
+    def select_chapter(cls,url):
+        sql = 'select * from dd_chaptername where url= \"%s\"' %(url)
+        # print(sql)
+        cursor.execute(sql)
+
+        if not cursor.fetchall():
+            return 0
+        else:
+            return 1

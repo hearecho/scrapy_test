@@ -25,3 +25,17 @@ class ScrapyTestItem(scrapy.Item):
     category = scrapy.Field()
     #小说编号
     name_id = scrapy.Field()
+
+
+class DcontentItem(scrapy.Field):
+    #小说编号
+    id_name = scrapy.Field()
+    #章节内容
+    chaptercontent = scrapy.Field()
+    #num 绑定章节顺序
+    num = scrapy.Field()
+    #章节地址
+    chapternum = scrapy.Field()
+    #章节名字
+    chaptername = scrapy.Field()
+
